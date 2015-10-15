@@ -34,4 +34,8 @@ class StringParser
         return true;
     }
 
+    public function getNextRomanNumeralToParse()
+    {
+    }
+
 }
