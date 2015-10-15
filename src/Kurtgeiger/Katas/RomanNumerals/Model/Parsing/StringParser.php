@@ -36,7 +36,7 @@ class StringParser
 
     public function getNextRomanNumeralToParse()
     {
-        return 'XXVIII';
+        return $this->provider->provideRomanNumeralAsString();
     }
 
 }
