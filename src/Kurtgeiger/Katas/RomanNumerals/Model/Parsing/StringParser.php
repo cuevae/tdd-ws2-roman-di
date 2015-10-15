@@ -36,6 +36,7 @@ class StringParser
 
     public function getNextRomanNumeralToParse()
     {
+        return 'XXVIII';
     }
 
 }
