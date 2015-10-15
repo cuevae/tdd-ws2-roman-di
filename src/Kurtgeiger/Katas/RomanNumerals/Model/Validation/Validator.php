@@ -22,4 +22,8 @@ namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation;
 class Validator
 {
 
+    public function itWorks()
+    {
+        return true;
+    }
 }
