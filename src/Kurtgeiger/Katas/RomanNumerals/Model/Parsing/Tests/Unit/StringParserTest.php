@@ -20,14 +20,28 @@ namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing\Tests\Unit;
 
 
 use Kurtgeiger\Katas\RomanNumerals\Model\Parsing\StringParser;
+use Kurtgeiger\Katas\RomanNumerals\Model\Providers\ProvidersInterface;
 
 class StringParserTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testItWorks()
     {
-        $stringParser= new StringParser();
+        /** @var ProvidersInterface $providerMock */
+        $providerMock = $this->getMock('Kurtgeiger\Katas\RomanNumerals\Model\Providers\ProvidersInterface');
+        $stringParser = new StringParser($providerMock);
         $this->assertTrue($stringParser->itWorks());
+    }
+
+    public function testParserReceivesAStringFromProvider()
+    {
+        /** @var ProvidersInterface $providerMock */
+        $providerMock = $this->getMock('Kurtgeiger\Katas\RomanNumerals\Model\Providers\ProvidersInterface');
+        $stringParser = new StringParser($providerMock);
+
+        $expected = 'XXVIII';
+
+        $this->assertEquals($expected, $stringParser->getNextRomanNumeralToParse());
     }
 
 }

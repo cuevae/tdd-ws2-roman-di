@@ -19,8 +19,15 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing;
 
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Providers\ProvidersInterface;
+
 class StringParser
 {
+
+    public function __construct(ProvidersInterface $provider)
+    {
+        $this->provider = $provider;
+    }
 
     public function itWorks()
     {
