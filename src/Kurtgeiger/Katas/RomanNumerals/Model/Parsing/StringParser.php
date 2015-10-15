@@ -22,4 +22,9 @@ namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing;
 class StringParser
 {
 
+    public function itWorks()
+    {
+        return true;
+    }
+
 }

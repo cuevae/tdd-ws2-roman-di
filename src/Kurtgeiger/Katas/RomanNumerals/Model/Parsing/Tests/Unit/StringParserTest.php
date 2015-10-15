@@ -19,7 +19,15 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing\Tests\Unit;
 
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Parsing\StringParser;
+
 class StringParserTest extends \PHPUnit_Framework_TestCase
 {
+
+    public function testItWorks()
+    {
+        $stringParser= new StringParser();
+        $this->assertTrue($stringParser->itWorks());
+    }
 
 }
