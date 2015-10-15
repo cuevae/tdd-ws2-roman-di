@@ -40,8 +40,8 @@ class StringParserTest extends \PHPUnit_Framework_TestCase
         $stringParser = new StringParser($providerMock);
 
         $expected = 'XXVIII';
-        $this->assertEquals($expected, $stringParser->getNextRomanNumeralToParse());
         $providerMock->expects($this->once())->method('provideRomanNumeralAsString')->will($this->returnValue('XXVIII'));
+        $this->assertEquals($expected, $stringParser->getNextRomanNumeralToParse());
     }
 
 }
