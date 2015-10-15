@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <phpunit bootstrap="../src/bootstrap.php" verbose="true">
     <testsuites>
-        <testsuite name="Unit tests">
+        <testsuite name="unit">
             <directory>../src/Kurtgeiger/Katas/RomanNumerals/*/*/Tests/Unit</directory>
         </testsuite>
-        <testsuite name="Integration tests">
+        <testsuite name="integration">
             <directory>../src/Kurtgeiger/Katas/RomanNumerals/Tests/Integration</directory>
         </testsuite>
     </testsuites>
