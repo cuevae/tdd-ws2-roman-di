@@ -22,6 +22,8 @@ namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation;
 class Validator implements ValidatorInterface
 {
 
+    protected $validIndividualCharacters = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
+
     public function itWorks()
     {
         return true;
@@ -34,6 +36,11 @@ class Validator implements ValidatorInterface
      */
     public function validateRomanNumeralGivenAsString($romanNumeral)
     {
-        return in_array($romanNumeral, array('I', 'V', 'X', 'L', 'D', 'M'));
+        //Check for single characters
+        if (in_array($romanNumeral, $this->validIndividualCharacters)){
+            return true;
+        }
+
+        return false;
     }
 }
