@@ -34,6 +34,6 @@ class Validator implements ValidatorInterface
      */
     public function validateRomanNumeralGivenAsString($romanNumeral)
     {
-        return false;
+        return in_array($romanNumeral, array('I', 'V', 'X', 'L', 'D', 'M'));
     }
 }
