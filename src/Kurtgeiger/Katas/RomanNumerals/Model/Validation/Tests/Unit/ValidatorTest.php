@@ -47,6 +47,20 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($expected, $actual);
     }
 
+    /**
+     * @dataProvider correctRomanNumeralStrings
+     * @param string $input
+     */
+    public function testValidatorDetectsACorrectRomanNumeralString($input)
+    {
+        $expected = true;
+        $validator = new Validator();
+
+        $actual = $validator->validateRomanNumeralGivenAsString($input);
+
+        $this->assertSame($expected, $actual);
+    }
+
     public function incorrectRomanNumeralStrings()
     {
         return array(
@@ -55,6 +69,17 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
             array('ID'),
             array('IM'),
             array('LM'),
+        );
+    }
+
+    public function correctRomanNumeralStrings()
+    {
+        return array(
+            array('I'),
+            array('X'),
+            array('L'),
+            array('D'),
+            array('M'),
         );
     }
 
