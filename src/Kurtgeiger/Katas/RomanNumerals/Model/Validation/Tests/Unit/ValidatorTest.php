@@ -76,10 +76,12 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('I'),
+            array('V'),
             array('X'),
             array('L'),
             array('D'),
             array('M'),
+            array('IV'),
         );
     }
 
