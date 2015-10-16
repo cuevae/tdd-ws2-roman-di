@@ -1,6 +1,6 @@
 <?php
 /**
- * Kurt Geiger Validator
+ * Kurt Geiger ValidatorInterface
  *
  * NOTICE OF LICENSE
  *
@@ -19,21 +19,14 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation;
 
 
-class Validator implements ValidatorInterface
+interface ValidatorInterface
 {
-
-    public function itWorks()
-    {
-        return true;
-    }
 
     /**
      * @param string $romanNumeral
      *
      * @return bool     TRUE if valid, FALSE otherwise
      */
-    public function validateRomanNumeralGivenAsString($romanNumeral)
-    {
-        // TODO: Implement validateRomanNumeralGivenAsString() method.
-    }
+    public function validateRomanNumeralGivenAsString($romanNumeral);
+
 }
