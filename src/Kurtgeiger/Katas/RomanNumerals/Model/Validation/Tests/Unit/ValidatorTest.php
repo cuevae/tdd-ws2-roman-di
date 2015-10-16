@@ -30,4 +30,18 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($validator->itWorks());
     }
 
+    public function testValidatorDetectsAnIncorrectRomanNumeralString()
+    {
+        //Setup
+        $expected = false;
+        $input = 'IC';
+        $validator = new Validator();
+
+        //Run
+        $actual = $validator->validateRomanNumeralGivenAsString($input);
+
+        //Test
+        $this->assertSame($expected, $actual);
+    }
+
 }
