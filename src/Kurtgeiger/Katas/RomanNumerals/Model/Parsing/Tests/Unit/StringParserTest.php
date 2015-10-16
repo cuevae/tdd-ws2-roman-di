@@ -35,12 +35,14 @@ class StringParserTest extends \PHPUnit_Framework_TestCase
 
     public function testParserReceivesAStringFromProvider()
     {
+        //Setup
         /** @var ProvidersInterface $providerMock */
         $providerMock = $this->getMock('Kurtgeiger\Katas\RomanNumerals\Model\Providers\ProvidersInterface');
+        $providerMock->expects($this->once())->method('provideRomanNumeralAsString')->will($this->returnValue('XXVIII'));
         $stringParser = new StringParser($providerMock);
 
+        //Test
         $expected = 'XXVIII';
-        $providerMock->expects($this->once())->method('provideRomanNumeralAsString')->will($this->returnValue('XXVIII'));
         $this->assertEquals($expected, $stringParser->getNextRomanNumeralToParse());
     }
 
