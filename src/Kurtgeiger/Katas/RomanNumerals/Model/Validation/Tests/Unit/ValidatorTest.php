@@ -30,11 +30,14 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($validator->itWorks());
     }
 
-    public function testValidatorDetectsAnIncorrectRomanNumeralString()
+    /**
+     * @dataProvider incorrectRomanNumeralStrings
+     * @param string $input
+     */
+    public function testValidatorDetectsAnIncorrectRomanNumeralString($input)
     {
         //Setup
         $expected = false;
-        $input = 'IC';
         $validator = new Validator();
 
         //Run
@@ -42,6 +45,17 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
         //Test
         $this->assertSame($expected, $actual);
+    }
+
+    public function incorrectRomanNumeralStrings()
+    {
+        return array(
+            array('IC'),
+            array('IL'),
+            array('ID'),
+            array('IM'),
+            array('LM'),
+        );
     }
 
 }
