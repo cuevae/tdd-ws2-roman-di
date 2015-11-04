@@ -2,10 +2,7 @@
 <phpunit bootstrap="../src/bootstrap.php" verbose="true">
     <testsuites>
         <testsuite name="unit">
-            <directory>../src/Kurtgeiger/Katas/RomanNumerals/*/*/Tests/Unit</directory>
-        </testsuite>
-        <testsuite name="integration">
-            <directory>../src/Kurtgeiger/Katas/RomanNumerals/Tests/Integration</directory>
+            <directory>../tests/Unit/</directory>
         </testsuite>
     </testsuites>
 </phpunit>
