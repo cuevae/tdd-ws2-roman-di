@@ -22,4 +22,9 @@ namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation\Tests\Unit;
 class ValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
+    public function testItWorks()
+    {
+        $this->assertTrue(true);
+    }
+
 }

@@ -22,4 +22,9 @@ namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing\Tests\Unit;
 class StringParserTest extends \PHPUnit_Framework_TestCase
 {
 
+    public function testItWorks()
+    {
+        $this->assertTrue(true);
+    }
+
 }
