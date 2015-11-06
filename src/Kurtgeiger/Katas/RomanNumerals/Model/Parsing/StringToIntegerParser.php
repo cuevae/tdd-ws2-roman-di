@@ -18,8 +18,18 @@
 
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing;
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Providers\ProvidersInterface;
 
 class StringToIntegerParser implements ParserInterface
 {
+    public function __construct(ProvidersInterface $provider)
+    {
+        $this->provider = $provider;
+    }
 
+    public function getRomanNumerals()
+    {
+        $string = $this->provider->provideRomanNumeralAsString();
+        return $string;
+    }
 }

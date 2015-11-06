@@ -19,6 +19,8 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation\Tests\Unit;
 
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Validation\StringValidator;
+
 class StringValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -44,4 +46,15 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(true);
     }
 
+    public function testIsString()
+    {
+        $expected = true;
+        $providerMock = $this->getMock('Kurtgeiger\Katas\RomanNumerals\Model\Providers\ProvidersInterface');
+//        $providerMock->expects($this->once())->method('provideRomanNumeralAsString')->will->return('XII');
+//        $mock = $this->getMock('Kurtgeiger\Katas\RomanNumerals\Model\Validation\ValidatorInterface');
+        $stringValidator = new StringValidator();
+        $actual = $stringValidator->validate('XVII');
+
+        $this->assertEquals($expected, $actual);
+    }
 }

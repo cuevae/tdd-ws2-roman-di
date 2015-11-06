@@ -22,4 +22,6 @@ namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing;
 interface ParserInterface
 {
 
+    public function getRomanNumerals();
+
 }
