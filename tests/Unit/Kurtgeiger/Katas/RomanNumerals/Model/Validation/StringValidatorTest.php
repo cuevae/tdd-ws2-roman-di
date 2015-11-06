@@ -19,6 +19,8 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation\Tests\Unit;
 
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Validation\StringValidator;
+
 class StringValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -42,6 +44,13 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
     public function testItWorks()
     {
         $this->assertTrue(true);
+    }
+
+    public function testValidatorDetectsStringType()
+    {
+        $rnString = 'XII';
+        $validator = new StringValidator();
+        $this->assertTrue($validator->validate($rnString));
     }
 
 }

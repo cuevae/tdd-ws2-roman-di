@@ -22,4 +22,13 @@ namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation;
 class StringValidator implements ValidatorInterface
 {
 
+    public function validate($input)
+    {
+        if (is_string($input))
+        {
+            return true;
+        }
+        return false;
+    }
+
 }
