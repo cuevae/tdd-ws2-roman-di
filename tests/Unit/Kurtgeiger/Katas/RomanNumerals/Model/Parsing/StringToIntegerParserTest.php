@@ -19,6 +19,8 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing\Tests\Unit;
 
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Parsing\StringToIntegerParser;
+
 class StringToIntegerParserTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -27,4 +29,30 @@ class StringToIntegerParserTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(true);
     }
 
+    public function testParsingOfVlue()
+    {
+        $provider = $this->getMock('Kurtgeiger\Katas\RomanNumerals\Model\Providers\ProvidersInterface');
+        $provider
+            ->expects($this->once())
+            ->method('provideRomanNumeralAsString')
+            ->willReturn('IV');
+
+        $validator = $this->getMock('Kurtgeiger\Katas\RomanNumerals\Model\Validation\ValidatorInterface');
+        $validator
+            ->expects($this->once())
+            ->method('validate')
+            ->with($this->equalTo('IV'))
+            ->willReturn(true);
+
+        $consumer = $this->getMock('Kurtgeiger\Katas\RomanNumerals\Model\Consumers\ConsumersInterface');
+        $consumer->expects($this->once())
+            ->method('receiveRomanNumeralStringToIntegerConversion')
+            ->with($this->equalTo('IV'), $this->equalTo(4))
+            ->willReturn(null);
+
+        $parser = new StringToIntegerParser($provider, $validator);
+
+        $parser->parse($consumer);
+
+    }
 }

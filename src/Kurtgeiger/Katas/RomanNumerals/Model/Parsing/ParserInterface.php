@@ -19,7 +19,10 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing;
 
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Consumers\ConsumersInterface;
+
 interface ParserInterface
 {
 
+    public function parse(ConsumersInterface $consumersInterface);
 }

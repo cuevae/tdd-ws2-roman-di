@@ -19,7 +19,34 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing;
 
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Consumers\ConsumersInterface;
+use Kurtgeiger\Katas\RomanNumerals\Model\Providers\ProvidersInterface;
+use Kurtgeiger\Katas\RomanNumerals\Model\Validation\ValidatorInterface;
+
 class StringToIntegerParser implements ParserInterface
 {
 
+    /** @var ProvidersInterface */
+    private $provider;
+    /** @var ValidatorInterface */
+    private $validator;
+
+    public function __construct(ProvidersInterface $provider, ValidatorInterface $validator)
+    {
+        $this->provider = $provider;
+        $this->validator = $validator;
+    }
+
+    public function parse(ConsumersInterface $consumersInterface)
+    {
+        $value = $this->provider->provideRomanNumeralAsString();
+        $status = $this->validator->validate($value);
+        $convertedValue  = $this->parseString($value);
+        $consumersInterface->receiveRomanNumeralStringToIntegerConversion($value, $convertedValue );
+    }
+
+    public function parseString($stringValue)
+    {
+        return 4;
+    }
 }

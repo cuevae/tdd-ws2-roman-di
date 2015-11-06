@@ -19,6 +19,8 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation\Tests\Unit;
 
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Validation\StringValidator;
+
 class StringValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -43,5 +45,14 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertTrue(true);
     }
+
+    public function testIfValidValue()
+    {
+        $stringValidator = new StringValidator();
+        $validationStatus = $stringValidator->validate('IV');
+
+        $this->assertTrue($validationStatus);
+    }
+
 
 }
