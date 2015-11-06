@@ -1,6 +1,6 @@
 <?php
 /**
- * Kurt Geiger Validator
+ * Kurt Geiger ValidatorInterface
  *
  * NOTICE OF LICENSE
  *
@@ -19,7 +19,15 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation;
 
 
-class Validator
+interface ValidatorInterface
 {
+
+    /**
+     * TRUE if the given input is a valid roman numeral
+     *
+     * @param $input
+     * @return bool
+     */
+    public function validate($input);
 
 }

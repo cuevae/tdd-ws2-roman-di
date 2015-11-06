@@ -1,6 +1,6 @@
 <?php
 /**
- * Kurt Geiger ValidatorTest
+ * Kurt Geiger Validator
  *
  * NOTICE OF LICENSE
  *
@@ -16,15 +16,10 @@
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation\Tests\Unit;
+namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation;
 
 
-class ValidatorTest extends \PHPUnit_Framework_TestCase
+class StringValidator implements ValidatorInterface
 {
-
-    public function testItWorks()
-    {
-        $this->assertTrue(true);
-    }
 
 }
