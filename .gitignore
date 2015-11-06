@@ -1,1 +1,3 @@
 .idea
+build/logs/
+!build/logs/.gitkeep
