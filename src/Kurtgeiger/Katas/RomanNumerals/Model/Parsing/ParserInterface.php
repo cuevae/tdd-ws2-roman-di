@@ -1,6 +1,6 @@
 <?php
 /**
- * Kurt Geiger StringParser
+ * Kurt Geiger ParserInterface
  *
  * NOTICE OF LICENSE
  *
@@ -19,7 +19,7 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing;
 
 
-class StringParser
+interface ParserInterface
 {
 
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Kurt Geiger StringParserTest
+ * Kurt Geiger StringParser
  *
  * NOTICE OF LICENSE
  *
@@ -16,15 +16,10 @@
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing\Tests\Unit;
+namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing;
 
 
-class StringParserTest extends \PHPUnit_Framework_TestCase
+class StringToIntegerParser implements ParserInterface
 {
-
-    public function testItWorks()
-    {
-        $this->assertTrue(true);
-    }
 
 }
