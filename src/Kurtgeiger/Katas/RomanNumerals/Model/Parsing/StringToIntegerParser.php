@@ -19,7 +19,20 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing;
 
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Providers\ProvidersInterface;
+
 class StringToIntegerParser implements ParserInterface
 {
 
+    protected $provider;
+
+    public function __construct(ProvidersInterface $provider)
+    {
+        $this->provider = $provider;
+    }
+
+    public function getProvider()
+    {
+        return $this->provider;
+    }
 }

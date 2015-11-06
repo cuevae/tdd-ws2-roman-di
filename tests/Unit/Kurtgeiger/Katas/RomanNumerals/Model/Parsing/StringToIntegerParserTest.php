@@ -19,12 +19,22 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Parsing\Tests\Unit;
 
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Parsing\StringToIntegerParser;
+
 class StringToIntegerParserTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testItWorks()
     {
         $this->assertTrue(true);
+    }
+
+    public function testParserReceivesStringFromProvider()
+    {
+        $provider = $this->getMock('Kurtgeiger\Katas\RomanNumerals\Model\Providers\ProvidersInterface');
+        $parser = new StringToIntegerParser($provider);
+
+        $this->assertSame($provider, $parser->getProvider());
     }
 
 }
