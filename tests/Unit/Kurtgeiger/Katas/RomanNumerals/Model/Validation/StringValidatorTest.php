@@ -23,19 +23,21 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     //So getting the rulez from the internet..
-    //1. A letter can only be repeated three times, except for V, L and D
+    //1. Valid letters are I, V, X, L, C, D, M
+    //   We'll index them so to put them in order with I having index 0, V index 1 and so on
+    //2. A letter can only be repeated three times in a row, except for V, L and D that cannot repeat
     //      i.e. III, XXX, CCC, MMM are correct
     //      VVV, LLL, DDD are not correct
-    //2. Letters placed after another letter of higher value are correct, i.e. CV, XI, MI, MCVI
-    //3. Letters placed before another letter of higher value are only correct if their order
+    //3. Letters placed after another of higher value are correct, i.e. CV, XI, MI, MCVI
+    //4. Letters placed before another of higher value are only correct if their order
     //   indexes have a difference of 1 or 2, i.e. IV, IX but not IL (index difference > 2), and
-    //      a. If index diff is 1, the total value is not already represented by a single character,
+    //      a. If index difference is 1, the total value is not already represented by a single character,
     //          i.e. IV, XL, CD are correct;
-    //              VX not correct because there's already a letter for 5: V,
-    //              DM not correct because there's already a letter for 500: D
-    //      b. If index diff is 2, the total value is not a multiple of 9 and 5, i.e. XC, CM, IX, are correct
-    //              LD not correct since 450 is multiple of 9 and 5
-    //              VL not correct since 45 is multiple of 9 and 5
+    //              VX is not correct because there's already a letter for 5 => V,
+    //              DM is not correct because there's already a letter for 500 => D
+    //      b. If index difference is 2, the total value is not a multiple of 9 and 5, i.e. XC, CM, IX, are correct
+    //              LD is not correct since 450 is multiple of 9 and 5
+    //              VL is not correct since 45 is multiple of 9 and 5
 
     public function testItWorks()
     {
