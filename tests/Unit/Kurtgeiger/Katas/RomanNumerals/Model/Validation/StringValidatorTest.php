@@ -19,6 +19,8 @@
 namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation\Tests\Unit;
 
 
+use Kurtgeiger\Katas\RomanNumerals\Model\Validation\StringValidator;
+
 class StringValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -44,4 +46,51 @@ class StringValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(true);
     }
 
+    /**
+     * @dataProvider validSingleCharacters
+     */
+    public function testValidateASingleCharacter($input)
+    {
+        $validator = new StringValidator();
+        $result = $validator->validate($input);
+
+        $this->assertTrue($result);
+    }
+
+    /**
+     * @dataProvider invalidSingleCharacters
+     */
+    public function testInvalidSingleCharacter($input)
+    {
+        $validator = new StringValidator();
+        $result = $validator->validate($input);
+
+        $this->assertFalse($result);
+    }
+
+    public function validSingleCharacters(){
+        return array(
+            array('I'),
+            array('V'),
+            array('X'),
+            array('L'),
+            array('C'),
+            array('D'),
+            array('M'),
+        );
+    }
+
+    public function invalidSingleCharacters(){
+        return array(
+            array('Q')
+        );
+    }
+
+    public function testValidateThreeRomanCharactersInARow()
+    {
+        $validator = new StringValidator();
+        $result = $validator->validate();
+
+        $this->assertTrue($result);
+    }
 }

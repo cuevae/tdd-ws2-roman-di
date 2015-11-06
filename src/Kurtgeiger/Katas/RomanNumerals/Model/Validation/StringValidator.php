@@ -22,4 +22,16 @@ namespace Kurtgeiger\Katas\RomanNumerals\Model\Validation;
 class StringValidator implements ValidatorInterface
 {
 
+    protected $validCharacters = array('I','V','X','L','C','D','M');
+
+    /**
+     * TRUE if the given input is a valid roman numeral
+     *
+     * @param $input
+     * @return bool
+     */
+    public function validate($input)
+    {
+        return in_array($input, $this->validCharacters);
+    }
 }
